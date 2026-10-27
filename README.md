@@ -114,7 +114,6 @@ The VM network adapter was configured as follows:
 * **Allocations:**
   * RAM: 2048 MB
 
-A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
 
 ![Configuring NAT Network Adapter Settings](images/3-screenshot-nat-network-adapter-settings.png) 
 > *Description: VM Network Adapter and system settings mapping to the lab network.*
@@ -135,18 +134,17 @@ A consistent IP address makes it easier to document the lab and reference the Ka
 ---
 
 ## Step 6. Enabling clipboard and file drag-and-drop features
+The bidirectional clipboard and drag-and-drop feature was enabled to ensure that files and text can be easily copied between the host and the VM.
 
-> 📸 **Placeholder for Image:** `images/4-screenshot-kali-linux.png`  
-> *Description: Enabling seamless file sharing between VM and Host*
+![Enabling VM Drag-and-Drop and Clipboard](images/5-screenshot-enabling-cliboard-file-drag-and-drop.png)   
+> *Description: Enabling seamless file sharing between VM and Host through copy and paste and drag-and-drop features on VirtualBox*
 
 ---
 
 ### Step 7. Create a shared folder
-After completing the initial configuration, a VirtualBox snapshot was created.
-* **Snapshot Name:** `Clean Kali - Network Setup`
+A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
 
-The snapshot represents the clean baseline of the laboratory. If a future exercise changes or damages the VM configuration, the machine can be restored to this baseline.
-
+![Creating a Shared Folder](images/6-screenshot-configuring-shared-folder.png)
 ---
 
 ### Step 8. Create a Clean VM Snapshot
