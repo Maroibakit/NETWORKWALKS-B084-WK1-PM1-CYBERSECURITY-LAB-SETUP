@@ -133,8 +133,8 @@ A consistent IP address makes it easier to document the lab and reference the Ka
 > *Description: Assigning Kali VM IP within the NAT network IP pool.*
 ---
 
-## Step 6. Enabling clipboard and file drag-and-drop features
-The bidirectional clipboard and drag-and-drop feature was enabled to ensure that files and text can be easily copied between the host and the VM.
+## Step 6. Enabling Clipboard and File Drag-and-Drop Features
+The bidirectional clipboard and drag-and-drop features were enabled to ensure that files and text can be easily copied between the host and the VM.
 
 ![Enabling VM Drag-and-Drop and Clipboard](images/5-screenshot-enabling-clipboard-file-drag-and-drop.png)   
 > *Description: Enabling seamless file sharing between VM and Host through copy and paste and drag-and-drop features on VirtualBox*
@@ -173,7 +173,7 @@ Verify that your environment functions properly using the commands below:
 * **IP Address:** `10.0.0.2/24`
 * **Gateway:** `10.0.0.1`
 * **DNS:** `8.8.8.8`
-![Testing Internet Connectivity](images/9-screenshot-testing-and-verification.png)
+![Testing Internet Connectivity](images/9-screenshot-testing-and-verifications.png)
 > *Description: Testing results to ensure that the VM has intranet and internet communication as well as DNS resolution*
 ---
 
@@ -190,10 +190,14 @@ After extracting the hypervisor installation files, the installer kept saying th
   ```bash
   Get-CimInstance Win32_Process -Filter "Name = 'msiexec.exe'" | Select-Object ProcessId, SessionId, CreationDate, CommandLine
   ```
-The command revealed that the MSI is busy; I forced it to stop and disabled all the startup programs since there were updates holding it busy from one of the startup programs. Rebooted and re-ran the installer. 
+The command revealed that the MSI was busy; I forced it to stop and disabled all the startup programs since there were updates holding it busy from one of the startup programs. Rebooted and re-ran the installer. 
 
 ### Problem 2. Internet Connectivity After Static IP Configuration
 After manually configuring the IPv4 settings, Internet connectivity may fail depending on the Kali/NetworkManager configuration.
 * **Workaround used:**
   ```bash
   sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
+   sudo nmcli connection down "Wired connection 1"
+   sudo nmcli connection up "Wired connection 1"
+  
+  
