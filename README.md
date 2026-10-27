@@ -85,7 +85,7 @@ Additional target machines can be added to the same virtual network in future pr
 ### Step 2. Install VirtualBox
 VirtualBox was installed as the hypervisor.
 
-📸 **Installing VirtualBox:** (images/1-installing-virtualbox.png)
+📸 **Installing VirtualBox:** (images/1-screenshot-installing-virtualbox.png)
 > *Description: Oracle VirtualBox hypervisor setup dashboard.*
 
 ---
