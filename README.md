@@ -99,7 +99,7 @@ A dedicated NAT Network was created in VirtualBox.
 
 * **Note:** A NAT Network was selected because multiple virtual machines connected to the same NAT Network can communicate with one another while also having outbound network connectivity. This will allow future attacker and target VMs to communicate within the lab.
 
-![Creating NAT Network](images/2-nat-network-adapter-creation.png)  
+![Creating NAT Network](images/2-screenshot-nat-network-adapter-creation.png)  
 > *Description: VirtualBox NAT Network configuration showing the 10.0.0.0/24 IP prefix.*
 
 ---
