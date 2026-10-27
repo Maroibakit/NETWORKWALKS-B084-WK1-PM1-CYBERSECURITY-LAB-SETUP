@@ -130,7 +130,7 @@ The Kali Linux network configuration was checked and configured with a consisten
   * **DNS:** `8.8.8.8`
 
 A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
-![Assigning Consistent IP Address to the VM](images/4-screenshot-vm-network-settings.png) 
+![Assigning Consistent IP Address to the VM](images/4-screenshot-configuring-vm-network-settings.png) 
 > *Description: Assigning Kali VM IP within the NAT network IP pool.*
 ---
 
