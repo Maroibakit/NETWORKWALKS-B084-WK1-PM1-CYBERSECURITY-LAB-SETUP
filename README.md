@@ -77,7 +77,7 @@ Additional target machines can be added to the same virtual network in future pr
 ## 🪜 Lab Setup Procedure
 
 ### Step 1. Install 7-Zip
-7-Zip was installed to extract the Kali Linux virtual-machine package, which may be distributed as a `.7z` archive.
+Install 7-Zip to extract the Kali Linux virtual machine package, which may be distributed as a `.7z` archive.
 * **Tool:** 7-Zip
 
 ---
@@ -136,7 +136,7 @@ A consistent IP address makes it easier to document the lab and reference the Ka
 ## Step 6. Enabling clipboard and file drag-and-drop features
 The bidirectional clipboard and drag-and-drop feature was enabled to ensure that files and text can be easily copied between the host and the VM.
 
-![Enabling VM Drag-and-Drop and Clipboard](images/5-screenshot-enabling-cliboard-file-drag-and-drop.png)   
+![Enabling VM Drag-and-Drop and Clipboard](images/5-screenshot-enabling-clipboard-file-drag-and-drop.png)   
 > *Description: Enabling seamless file sharing between VM and Host through copy and paste and drag-and-drop features on VirtualBox*
 
 ---
