@@ -11,7 +11,7 @@
 [![Penetration Testing](https://img.shields.io/badge/Penetration_Testing-Lab-black?style=for-the-badge&logo=letsencrypt&logoColor=white)](https://github.com)
 [![Skill](https://img.shields.io/badge/Skill-Virtualization-red?style=for-the-badge&logo=vmware&logoColor=white)](https://github.com)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com)
-[![NetworkWalks](https://img.shields.io/badge/NetworkWalks-Template-orange?style=for-the-badge&logo=network-wired&logoColor=white)](https://github.com)
+[![NetworkWalks](https://img.shields.io/badge/NetworkWalks-orange?style=for-the-badge&logo=network-wired&logoColor=white)](https://github.com)
 [![Ethical Hacking](https://img.shields.io/badge/Ethical_Hacking-Practice-darkred?style=for-the-badge&logo=hackthebox&logoColor=white)](https://github.com)
 
 </div>
@@ -54,7 +54,7 @@ The main objectives of this laboratory project are to:
 Download and install VirtualBox, then configure a dedicated virtual network to isolate lab traffic while allowing controlled communication between nodes within the lab environment.
 * **Action:** Open VirtualBox $\rightarrow$ **Tools** $\rightarrow$ **Network** $\rightarrow$ **NAT Networks** (or Host-Only Networks).
 * **Configuration:**
-  * **Network Name:** `Lab-Net`
+  * **Network Name:** `NatNetwork`
   * **IPv4 Prefix:** `10.0.0.0/24`
   * **DHCP Server:** Enabled
 
@@ -66,7 +66,7 @@ Download and install VirtualBox, then configure a dedicated virtual network to i
 ### Step 2: Deploy and Configure the Virtual Machine
 * **Action:** Import or create your virtual machine image.
 * **Adapter Settings:** 
-  * *Adapter 1:* Attached to **NAT Network** (`NATNetwork`)
+  * *Adapter 1:* Attached to **NAT Network** (`NatNetwork`)
   * *Promiscuous Mode:* Deny (or Allow All depending on sniffing needs)
 
 > 📸 **Placeholder for Image:** `images/02-vm-settings.png`  
