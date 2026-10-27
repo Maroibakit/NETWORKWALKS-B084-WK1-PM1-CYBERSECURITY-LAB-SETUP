@@ -116,7 +116,7 @@ The VM network adapter was configured as follows:
 
 A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
 
-> 📸 **Placeholder for Image:** `images/4-screenshot-kali-network-settings.png`  
+![Configuring NAT Network Adapter Settings](images/3-screenshot-nat-network-adapter-settings.png) 
 > *Description: VM Network Adapter and system settings mapping to the lab network.*
 
 ---
