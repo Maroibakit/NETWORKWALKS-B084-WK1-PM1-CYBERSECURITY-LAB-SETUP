@@ -197,7 +197,7 @@ After manually configuring the IPv4 settings, Internet connectivity may fail dep
 * **Workaround used:**
   ```bash
   sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
-   sudo nmcli connection down "Wired connection 1"
-   sudo nmcli connection up "Wired connection 1"
+  sudo nmcli connection down "Wired connection 1"
+  sudo nmcli connection up "Wired connection 1"
   
   
