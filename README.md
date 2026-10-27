@@ -145,11 +145,13 @@ The bidirectional clipboard and drag-and-drop feature was enabled to ensure that
 A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
 
 ![Creating a Shared Folder](images/6-screenshot-configuring-shared-folder.png)
+> *Description: Creating a shared folder that a VM can access from the host.*
 ---
 
 ### Step 8. Create a Clean VM Snapshot
 After completing the initial configuration, a VirtualBox snapshot was created.
-* **Snapshot Name:** `Clean Kali - Network Setup`
+![Creating a VM Snapshot for Backup ](images/7-screenshot-taking-baseline-snapshot.png)
+> *Description: Creating a snapshot as best practice to ensure the system can be restored during failure.*
 
 The snapshot represents the clean baseline of the laboratory. If a future exercise changes or damages the VM configuration, the machine can be restored to this baseline.
 
@@ -164,21 +166,33 @@ Verify that your environment functions properly using the commands below:
 | 🌐 Check IP address | `ip a` | Correct Kali IP displayed |
 | 📡 Test gateway | `ping 10.0.0.1` | Successful replies |
 | 🌍 Test Internet connectivity | `ping 8.8.8.8` | Successful replies |
-| 🔎 Test DNS resolution | `nslookup networkwalks.com` | Domain resolves |
-| 🧰 Verify Nmap | `nmap --version` | Nmap version displayed |
+| 🔎 Test DNS resolution | `ping google.com` | Domain resolves |
 | 🔄 Verify snapshot | *Restore snapshot and run `ip a`* | Baseline configuration restored |
 
-### Example Results
+### Test and verification Results
 * **IP Address:** `10.0.0.2/24`
 * **Gateway:** `10.0.0.1`
 * **DNS:** `8.8.8.8`
-
+![Testing Internet Connectivity](images/9-screenshot-testing-and-verification.png)
+> *Description: Testing results to ensure that the VM has intranet and internet communication as well as DNS resolution*
 ---
 
 ## 🐞 Problems Encountered & Solutions
 Documenting problems is an important part of the project.
 
-### Problem 1. Internet Connectivity After Static IP Configuration
+### Problem 1. Failing to Install VirtualBox
+After extracting the hypervisor installation files, the installer kept saying there is already a running installation, as per the image below.
+
+![VirtualBox Installation Error](images/8-screenshot-error-installing-virtualbox.png)
+> *Description: Testing results to ensure that the VM has intranet and internet communication as well as DNS resolution*
+
+* **Workaround used:**
+  ```bash
+  Get-CimInstance Win32_Process -Filter "Name = 'msiexec.exe'" | Select-Object ProcessId, SessionId, CreationDate, CommandLine
+  ```
+The command revealed that the MSI is busy; I forced it to stop and disabled all the startup programs since there were updates holding it busy from one of the startup programs. Rebooted and re-ran the installer. 
+
+### Problem 2. Internet Connectivity After Static IP Configuration
 After manually configuring the IPv4 settings, Internet connectivity may fail depending on the Kali/NetworkManager configuration.
 * **Workaround used:**
   ```bash
