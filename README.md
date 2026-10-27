@@ -19,11 +19,7 @@
 ---
 
 ## 📌 Project Overview
-This project focuses on setting up a virtual cybersecurity and penetration-testing laboratory using VirtualBox and Kali Linux.
-
-The purpose of the lab is to create a controlled environment where cybersecurity tools, network scanning, reconnaissance, vulnerability assessment, and other security-testing activities can be performed safely and repeatedly.
-
-The lab is configured on a private virtual network so that additional machines can be added later and used as targets for authorized security testing.
+This project details the deployment of a virtual penetration-testing lab using Oracle VirtualBox and Kali Linux. Designed as a controlled, repeatable environment, it facilitates safe network scanning and vulnerability analysis. Built on an isolated private network, the architecture easily accommodates additional target machines for advanced security drills
 
 ---
 
@@ -33,7 +29,7 @@ The main objectives of this project are to:
 - Install/import Kali Linux as a virtual machine.
 - Create a private NAT Network for the cybersecurity lab.
 - Configure network connectivity for Kali Linux.
-- Assign a consistent IP address to the Kali VM.
+- Assign a consistent IP address to the Kali VM from the NAT Network Pool.
 - Verify network connectivity and DNS resolution.
 - Take a clean VM snapshot for recovery.
 - Document the complete setup process.
@@ -81,11 +77,8 @@ Additional target machines can be added to the same virtual network in future pr
 ## 🪜 Lab Setup Procedure
 
 ### Step 1. Install 7-Zip
-Install 7-Zip to extract the Kali Linux virtual machine package, which may be distributed as a `.7z` archive.
+7-Zip was installed to extract the Kali Linux virtual-machine package, which may be distributed as a `.7z` archive.
 * **Tool:** 7-Zip
-
-> 📸 **Placeholder for Image:** `images/1-screenshot-title-image.png`  
-> *Description: Extracting the Kali Linux archive using 7-Zip.*
 
 ---
 
