@@ -134,6 +134,12 @@ A consistent IP address makes it easier to document the lab and reference the Ka
 
 ---
 
+## Step 6. Enabling clipboad and file Drag and Drop freatures
+
+> 📸 **Placeholder for Image:** `images/4-screenshot-kali-linux.png`  
+> *Description: Enabling Seamless filesharing between VM and Host*
+
+---
 
 ### Step 7. Create a shared folder
 After completing the initial configuration, a VirtualBox snapshot was created.
