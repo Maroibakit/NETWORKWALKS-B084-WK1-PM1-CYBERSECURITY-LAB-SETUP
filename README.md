@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔒 Cybersecurity Lab Environment Setup
+# 🔐 Cybersecurity Lab Environment Setup
 ### Building an isolated virtual lab for penetration testing and ethical hacking practice
 
 [![Skill](https://img.shields.io/badge/Skill-Cybersecurity-red?style=for-the-badge&logo=shield&logoColor=white)](https://github.com)
@@ -18,17 +18,45 @@
 
 ---
 
+## 📌 Project Overview
+This project focuses on setting up a virtual cybersecurity and penetration-testing laboratory using VirtualBox and Kali Linux.
+
+The purpose of the lab is to create a controlled environment where cybersecurity tools, network scanning, reconnaissance, vulnerability assessment, and other security-testing activities can be performed safely and repeatedly.
+
+The lab is configured on a private virtual network so that additional machines can be added later and used as targets for authorized security testing.
+
+---
+
 ## 🎯 Objectives
-The main objectives of this laboratory project are to:
-* Download and Install VirtualBox.
-* Set up and configure the virtualization environment with VirtualBox.
-* Create a NAT Network within the VirtualBox platform.
-* Import, deploy, and configure the core Kali Linux virtual machine for pentesting.
-* Assign Network information to the Kali Linux machine statically from the IP pool of the NAT Network
-* Verify routing, DNS resolution, and endpoint communication.
-* Create a shared folder to facilitate seamless file sharing between the virtual machine and the host.
-* Create clean base snapshots for future lab exercises and disaster recovery.
-* Document the complete deployment procedure professionally.
+The main objectives of this project are to:
+- Install and configure VirtualBox.
+- Install/import Kali Linux as a virtual machine.
+- Create a private NAT Network for the cybersecurity lab.
+- Configure network connectivity for Kali Linux.
+- Assign a consistent IP address to the Kali VM.
+- Verify network connectivity and DNS resolution.
+- Take a clean VM snapshot for recovery.
+- Document the complete setup process.
+- Prepare the environment for future cybersecurity projects.
+
+---
+
+## 🛡️ Purpose of the Lab
+The lab provides an isolated and controlled environment for cybersecurity learning and authorized security testing. It can be used for activities such as:
+- Network reconnaissance
+- Port scanning
+- Vulnerability assessment
+- Packet analysis
+- Web security testing
+- Exploitation practice
+- Security-tool experimentation
+
+> ⚠️ **Important:** This laboratory must only be used for systems that you own or have explicit permission to test. Do not use the lab or its tools to attack unauthorized systems.
+
+---
+
+## 🏗️ Lab Architecture
+Additional target machines can be added to the same virtual network in future projects.
 
 ---
 
@@ -39,44 +67,113 @@ The main objectives of this laboratory project are to:
 | 🖥️ Host OS | Windows 11 |
 | 🧠 Host RAM | 32 GB |
 | 🧰 Hypervisor | Oracle VirtualBox 7.2.22 |
-| 🛡️ Primary VM / OS | Kali Linux |
-| 🧠 VM RAM Allocation | 2048 MB |
-| 🌐 Virtual Network Type | NAT Network |
-| 📡 Network Address Range | 10.0.0.0/24 |
-| 🐧 Assigned IP Address | 10.0.0.2/24 |
+| 🐉 Security OS | Kali Linux v2026.3 |
+| 🧠 Kali RAM | 2048 MB |
+| 🌐 Virtual Network | NAT Network |
+| 📡 Network Address | 10.0.0.0/24 |
+| 🐧 Kali IP Address | 10.0.0.2/24 |
 | 🚪 Default Gateway | 10.0.0.1 |
+| 🌍 DNS Server | 8.8.8.8 |
+| 🔮 Future VM Range | 10.0.0.3–10.0.0.99 |
 
 ---
 
 ## 🪜 Lab Setup Procedure
 
-### Step 1: Prepare the Hypervisor and Virtual Network
-Download and install VirtualBox, then configure a dedicated virtual network to isolate lab traffic while allowing controlled communication between nodes within the lab environment.
-* **Action:** Open VirtualBox $\rightarrow$ **Tools** $\rightarrow$ **Network** $\rightarrow$ **NAT Networks** (or Host-Only Networks).
+### Step 1. Install 7-Zip
+Install 7-Zip to extract the Kali Linux virtual machine package, which may be distributed as a `.7z` archive.
+* **Tool:** 7-Zip
+
+> 📸 **Placeholder for Image:** `images/1-screenshot-title-image.png`  
+> *Description: Extracting the Kali Linux archive using 7-Zip.*
+
+---
+
+### Step 2. Install VirtualBox
+VirtualBox was installed as the hypervisor.
+
+> 📸 **Placeholder for Image:** `images/2-screenshot-network-settings-1.png`  
+> *Description: Oracle VirtualBox hypervisor setup dashboard.*
+
+---
+
+### Step 3. Create the NAT Network
+A dedicated NAT Network was created in VirtualBox.
 * **Configuration:**
   * **Network Name:** `NatNetwork`
   * **IPv4 Prefix:** `10.0.0.0/24`
-  * **DHCP Server:** Enabled
+  * **DHCP:** Enabled
+  * **IPv6:** Disabled
 
-> 📸 **Placeholder for Image:** `images/01-network-setup.png`  
+* **Note:** A NAT Network was selected because multiple virtual machines connected to the same NAT Network can communicate with one another while also having outbound network connectivity. This will allow future attacker and target VMs to communicate within the lab.
+
+> 📸 **Placeholder for Image:** `images/3-screenshot-kali-linux.png`  
 > *Description: VirtualBox NAT Network configuration showing the 10.0.0.0/24 IP prefix.*
 
 ---
 
-### Step 2: Deploy and Configure the Virtual Machine
-* **Action:** Import or create your virtual machine image.
-* **Adapter Settings:** 
-  * *Adapter 1:* Attached to **NAT Network** (`NatNetwork`)
-  * *Promiscuous Mode:* Deny (or Allow All depending on sniffing needs)
+### Step 4. Import Kali Linux
+The Kali Linux virtual machine was downloaded from the official Kali Linux website and imported into VirtualBox.
+The VM network adapter was configured as follows:
+* **Adapter 1:**
+  * Attached to: NAT Network
+  * Network: `NatNetwork`
+  * Adapter Type: Intel PRO/1000 MT Desktop
+* **Allocations:**
+  * RAM: 2048 MB
 
-> 📸 **Placeholder for Image:** `images/02-vm-settings.png`  
-> *Description: VM Network Adapter settings mapping to the lab network.*
+A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
+
+> 📸 **Placeholder for Image:** `images/4-screenshot-kali-network-settings.png`  
+> *Description: VM Network Adapter and system settings mapping to the lab network.*
 
 ---
 
-### Step 3: Configure Static IP and Network Parameters
-Log into the machine and assign a static IP address to ensure stable referencing across future lab modules.
-* **Commands used:**
+### Step 5. Configure the Kali Linux Network
+The Kali Linux network configuration was checked and configured with a consistent IPv4 address.
+* **Example configuration:**
+  * **IP Address:** `10.0.0.2`
+  * **Subnet Mask:** `255.255.255.0`
+  * **Gateway:** `10.0.0.1`
+  * **DNS:** `8.8.8.8`
+
+A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
+
+---
+
+### Step 6. Create a Clean VM Snapshot
+After completing the initial configuration, a VirtualBox snapshot was created.
+* **Snapshot Name:** `Clean Kali - Network Setup`
+
+The snapshot represents the clean baseline of the laboratory. If a future exercise changes or damages the VM configuration, the machine can be restored to this baseline.
+
+---
+
+## 🔎 Lab Verification
+
+Verify that your environment functions properly using the commands below:
+
+| ✅ Test | 🧾 Command | 🎯 Expected Result |
+| :--- | :--- | :--- |
+| 🌐 Check IP address | `ip a` | Correct Kali IP displayed |
+| 📡 Test gateway | `ping 10.0.0.1` | Successful replies |
+| 🌍 Test Internet connectivity | `ping 8.8.8.8` | Successful replies |
+| 🔎 Test DNS resolution | `nslookup networkwalks.com` | Domain resolves |
+| 🧰 Verify Nmap | `nmap --version` | Nmap version displayed |
+| 🔄 Verify snapshot | *Restore snapshot and run `ip a`* | Baseline configuration restored |
+
+### Example Results
+* **IP Address:** `10.0.0.2/24`
+* **Gateway:** `10.0.0.1`
+* **DNS:** `8.8.8.8`
+
+---
+
+## 🐞 Problems Encountered & Solutions
+Documenting problems is an important part of the project.
+
+### Problem 1. Internet Connectivity After Static IP Configuration
+After manually configuring the IPv4 settings, Internet connectivity may fail depending on the Kali/NetworkManager configuration.
+* **Workaround used:**
   ```bash
-  ip a
-  sudo nano /etc/netplan/01-netcfg.yaml # (or standard interface configuration)
+  sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
