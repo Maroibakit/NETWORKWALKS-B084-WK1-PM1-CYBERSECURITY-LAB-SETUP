@@ -150,18 +150,22 @@ The bidirectional clipboard and drag-and-drop features were enabled to ensure th
 ---
 
 ### Step 7. Create a shared folder
-A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
+To streamline workflows, a VirtualBox Shared Folder was configured between the host operating system and the Kali Linux VM. The directory is automatically mounted within the guest environment at `/media/sf_<folder_name>`, granting the VM secure local access to files on the host machine. This eliminates the need for network-based file transfers when moving utility scripts, tool updates, or project documentation into the lab.
 
 ![Creating a Shared Folder](images/6-screenshot-configuring-shared-folder.png)
 > *Description: Creating a shared folder that a VM can access from the host.*
 ---
 
 ### Step 8. Create a Clean VM Snapshot
-After completing the initial configuration, a VirtualBox snapshot was created.
+Upon completing the initial network and system configuration, a VirtualBox snapshot was captured to establish an immutable baseline for the lab.
+
+* **State Preservation:** Preserves the OS, network configuration, and installed utilities in a known-good, non-degraded state.
+
+* **Rapid Rollback:** Enables instant restoration back to this clean state if subsequent security testing, misconfigurations, or malware execution disrupt system functionality.
+
+* **Operational Efficiency:** Eliminates the need to reinstall or reconfigure the virtual machine for future exercises.
 ![Creating a VM Snapshot for Backup ](images/7-screenshot-taking-baseline-snapshot.png)
 > *Description: Creating a snapshot as best practice to ensure the system can be restored during failure.*
-
-The snapshot represents the clean baseline of the laboratory. If a future exercise changes or damages the VM configuration, the machine can be restored to this baseline.
 
 ---
 
