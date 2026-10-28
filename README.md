@@ -91,15 +91,22 @@ VirtualBox was installed as the hypervisor.
 ---
 
 ### Step 3. Create the NAT Network
-A dedicated NAT Network was created in VirtualBox.
+Create a dedicated NAT Network in VirtualBox.
 * **Configuration:**
   * **Network Name:** `NatNetwork`
   * **IPv4 Prefix:** `10.0.0.0/24`
   * **DHCP:** Enabled
   * **IPv6:** Disabled
 
-* **Note:** A NAT Network was selected because multiple virtual machines connected to the same NAT Network can communicate with one another while also having outbound network connectivity. This will allow future attacker and target VMs to communicate within the lab.
+* **Rationale for NAT Network Architecture:**
+A custom NAT Network was selected to create an isolated, shared virtual subnet for the lab.
 
+* **Inter-VM Communication:** Allows attacker and target virtual machines to seamlessly discover and communicate with each other within a controlled environment.
+
+* **Outbound Access:** Enables lab endpoints to reach the internet for package updates, tool downloads, and system patches.
+
+* **Containment:** Protects the host and physical network by blocking unsolicited inbound traffic from entering the lab.
+  
 ![Creating NAT Network](images/2-screenshot-nat-network-adapter-creation.png)  
 > *Description: VirtualBox NAT Network configuration showing the 10.0.0.0/24 IP prefix.*
 
