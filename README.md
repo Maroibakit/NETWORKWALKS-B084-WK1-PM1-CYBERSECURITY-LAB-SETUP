@@ -192,6 +192,8 @@ Verify that your environment functions properly using the commands below:
 ## 🐞 Problems Encountered & Solutions
 Documenting problems is an important part of the project.
 
+---
+
 ### Problem 1. Failing to Install VirtualBox
 After extracting the hypervisor installation files, the installer kept saying there is already a running installation, as per the image below.
 
@@ -204,6 +206,8 @@ After extracting the hypervisor installation files, the installer kept saying th
   ```
 The command revealed that the MSI was busy; I forced it to stop and disabled all the startup programs since there were updates holding it busy from one of the startup programs. Rebooted and re-ran the installer. 
 
+---
+
 ### Problem 2. Internet Connectivity After Static IP Configuration
 After manually configuring the IPv4 settings, Internet connectivity failed, the wired NIC icon disappeared, and the loading icon was displayed. The following commands were used to restore connectivity.
 * **Workaround used:**
@@ -211,5 +215,60 @@ After manually configuring the IPv4 settings, Internet connectivity failed, the 
   sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0 
   sudo nmcli connection down "Wired connection 1"
   sudo nmcli connection up "Wired connection 1"
+
+---
+
+## 💡 Key Learnings & Technical Takeaways
+
+Through this project, I gained practical experience in provisioning, networking, and managing virtual infrastructure tailored for hands-on cybersecurity practice. 
+
+### 1. Fundamental Virtualization & System Architecture
+* Developing a deep, foundational understanding of hypervisor capabilities and virtualization mechanics.
+* Gained hands-on experience in **troubleshooting hypervisor installations** and seeing complex setup challenges through to resolution.
+
+### 2. NAT vs. NAT Network Topology
+* **Standard NAT:** Isolates individual guest VMs while routing outbound traffic through the host.
+* **NAT Network:** Establishes a shared virtual switch/subnet, enabling multiple lab VMs (such as attacker and target nodes) to communicate internally while retaining outbound Internet access for updates.
+
+### 3. Virtual Machine Networking & IP Configuration
+* Configured VirtualBox virtual network adapters and interface settings to manage traffic flows.
+* Configured and verified static IPv4 addressing, subnet masks, default gateways, and DNS resolution inside Kali Linux.
+
+### 4. Infrastructure Preservation & Recovery (Snapshots)
+* Mastered baseline management by capturing clean VM snapshots prior to experimental or high-risk testing.
+* Established a reliable, known-good restoration point to recover quickly from misconfigurations or system damage without reinstalling.
+
+### 5. Documentation & Version Control
+* Learned to systematically document terminal commands, configuration steps, network topologies, troubleshooting steps, and visual proofs.
+* Adopted **Git and GitHub** workflows to manage project documentation and build a professional cybersecurity portfolio.
+
+---
+
+## 🔐 Security & Ethical Disclaimer
+This laboratory environment is designed and operated **strictly for educational, research, and authorized security testing purposes**. All activities conducted within this environment adhere to ethical hacking standards and containment practices.
+
+---
+
+## 🔗 Tools & External Resources
+* **7-Zip:** [7-zip.org/download.html](https://7-zip.org/download.html)
+* **Oracle VM VirtualBox:** [virtualbox.org/wiki/Downloads](https://virtualbox.org/wiki/Downloads)
+* **Kali Linux:** [kali.org/get-kali](https://kali.org/get-kali)
+
+---
+
+## 👤 Author
+**Tsepo Maroibaki**  
+* NOC, Cybersecurity Specialist & Network Engineer*  
+* Networkwalks Cybersecurity Program (Batch B084)  
+* **LinkedIn:** [https://www.linkedin.com/in/tsepo-maroibaki-88234921a](https://www.linkedin.com/in/)  
+* **GitHub Repository:** [https://github.com/Maroibakit/NETWORKWALKS-B084-WK1-PM1-CYBERSECURITY-LAB-SETUP/edit/main/README.md](https://github.com/)
+
+---
+
+📌 **Project Metadata:** `Program: Networkwalks Cybersecurity` | `Module: Week 01` | `Project: Lab Setup & Verification`
+
+
+
+  
   
   
