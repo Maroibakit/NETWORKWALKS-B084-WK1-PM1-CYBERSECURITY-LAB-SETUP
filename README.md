@@ -37,14 +37,16 @@ The Primary Objective of the project:
 ---
 
 ## 🛡️ Purpose of the Lab
-The lab provides an isolated and controlled environment for cybersecurity learning and authorized security testing. It can be used for activities such as:
-- Network reconnaissance
-- Port scanning
-- Vulnerability assessment
-- Packet analysis
-- Web security testing
-- Exploitation practice
-- Security-tool experimentation
+The primary purpose of this lab is to establish a secure, isolated, and fully controlled environment designed for hands-on cybersecurity research, skills development, and authorized security assessments.
+
+Key operational capabilities include:
+- Reconnaissance & Footprinting: Conducting network discovery and target mapping.
+- Service & Port Scanning: Identifying open ports, active services, and OS fingerprints.
+- Vulnerability Assessment: Scanning and analyzing systems for security weaknesses.
+- Traffic & Packet Analysis: Inspecting network protocol flows and payload data.
+- Web Application Testing: Evaluating web application security postures against common threat vectors.
+- Offensive Security Practice: Executing controlled exploitation scenarios and proof-of-concept attacks.
+- Tooling & Methodology Evaluation: Testing and fine-tuning cybersecurity utilities and defensive workflows.
 
 > ⚠️ **Important:** This laboratory must only be used for systems that you own or have explicit permission to test. Do not use the lab or its tools to attack unauthorized systems.
 
