@@ -99,13 +99,13 @@ Create a dedicated NAT Network in VirtualBox.
   * **IPv6:** Disabled
 
 * **Rationale for NAT Network Architecture:**
-A custom NAT Network was selected to create an isolated, shared virtual subnet for the lab.
+We selected a custom NAT Network to create an isolated, shared virtual subnet for the lab.
 
--  **Inter-VM Communication:** Allows attacker and target virtual machines to seamlessly discover and communicate with each other within a controlled environment.
+  * **Inter-VM Communication:** Allows attacker and target virtual machines to seamlessly discover and communicate with each other    within a controlled environment.
 
-- **Outbound Access:** Enables lab endpoints to reach the internet for package updates, tool downloads, and system patches.
+  * **Outbound Access:** Enables lab endpoints to reach the internet for package updates, tool downloads, and system patches.
 
-- **Containment:** Protects the host and physical network by blocking unsolicited inbound traffic from entering the lab.
+  * **Containment:** Protects the host and physical network by blocking unsolicited inbound traffic from entering the lab.
   
 ![Creating NAT Network](images/2-screenshot-nat-network-adapter-creation.png)  
 > *Description: VirtualBox NAT Network configuration showing the 10.0.0.0/24 IP prefix.*
