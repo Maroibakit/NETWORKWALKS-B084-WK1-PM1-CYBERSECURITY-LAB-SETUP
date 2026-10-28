@@ -258,7 +258,7 @@ This laboratory environment is designed and operated **strictly for educational,
 
 ## 👤 Author
 **Tsepo Maroibaki**  
-* NOC, Cybersecurity Specialist & Network Engineer*  
+* Network Operations Center & Cybersecurity   
 * Networkwalks Cybersecurity Program (Batch B084)  
 * **LinkedIn:** [https://www.linkedin.com/in/tsepo-maroibaki-88234921a](https://www.linkedin.com/in/)  
 * **GitHub Repository:** [https://github.com/Maroibakit/NETWORKWALKS-B084-WK1-PM1-CYBERSECURITY-LAB-SETUP/edit/main/README.md](https://github.com/)
