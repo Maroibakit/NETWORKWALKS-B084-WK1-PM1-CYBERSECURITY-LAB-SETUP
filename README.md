@@ -24,16 +24,15 @@ This project details the deployment of a virtual penetration-testing lab using O
 ---
 
 ## 🎯 Objectives
-The main objectives of this project are to:
-- Install and configure VirtualBox.
-- Install/import Kali Linux as a virtual machine.
-- Create a private NAT Network for the cybersecurity lab.
-- Configure network connectivity for Kali Linux.
-- Assign a consistent IP address to the Kali VM from the NAT Network Pool.
-- Verify network connectivity and DNS resolution.
-- Take a clean VM snapshot for recovery.
-- Document the complete setup process.
-- Prepare the environment for future cybersecurity projects.
+The Primary Objective of the project:
+- Deploy and configure Oracle VM VirtualBox as the base virtualization platform.
+- Provision and initialize a Kali Linux virtual machine within the environment.
+- Design and build an isolated private NAT Network to host the cybersecurity lab.
+- Establish robust network connectivity and assign a predictable static IP address to the Kali VM.
+- Validate system internet accessibility and DNS name resolution.
+- Capture a baseline system snapshot to ensure seamless recovery and state rollback.
+- Maintain comprehensive technical documentation of the deployment and network topology.
+- Establish a scalable foundation for future security assessments and testing workflows.
 
 ---
 
