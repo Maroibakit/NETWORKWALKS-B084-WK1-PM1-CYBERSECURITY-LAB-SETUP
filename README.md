@@ -205,10 +205,10 @@ After extracting the hypervisor installation files, the installer kept saying th
 The command revealed that the MSI was busy; I forced it to stop and disabled all the startup programs since there were updates holding it busy from one of the startup programs. Rebooted and re-ran the installer. 
 
 ### Problem 2. Internet Connectivity After Static IP Configuration
-After manually configuring the IPv4 settings, Internet connectivity may fail depending on the Kali/NetworkManager configuration.
+After manually configuring the IPv4 settings, Internet connectivity failed, the wired NIC icon disappeared, and the loading icon was displayed. The following commands were used to restore connectivity.
 * **Workaround used:**
   ```bash
-  sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
+  sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0 
   sudo nmcli connection down "Wired connection 1"
   sudo nmcli connection up "Wired connection 1"
   
